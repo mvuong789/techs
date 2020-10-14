@@ -1,13 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './features/app/App';
 import * as serviceWorker from './serviceWorker';
+import LogRocket from 'logrocket';
+import { Provider } from 'react-redux';
+import store from './config/store';
+
+LogRocket.init('edatn0/techs');
+
+LogRocket.identify('123457', {
+  name: 'Will',
+  email: 'william.wei@hoolah.co',
+  subscriptionType: 'premium',
+  favouriteFood: 'burgers',
+});
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 
