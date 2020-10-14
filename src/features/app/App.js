@@ -10,6 +10,7 @@ function App() {
       <AddTodo />
       <TodoList />
       <VisibilityFilters />
+      <button onClick={() => { throw 'Test error' }}>Fake error</button>
     </div>
   );
 }

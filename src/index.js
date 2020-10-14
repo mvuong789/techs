@@ -6,6 +6,16 @@ import * as serviceWorker from './serviceWorker';
 import LogRocket from 'logrocket';
 import { Provider } from 'react-redux';
 import store from './config/store';
+import * as Sentry from '@sentry/react';
+import { Integrations } from '@sentry/tracing';
+
+Sentry.init({
+  dsn: 'https://39d825804c014af595f6bc26e95c697c@o461316.ingest.sentry.io/5462964',
+  integrations: [
+    new Integrations.BrowserTracing(),
+  ],
+  tracesSampleRate: 1.0,
+});
 
 LogRocket.init('edatn0/techs');
 
